@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNBSD | Deep Neural Brain Stroke Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Deep Neural Brain Stroke Detection System (DNBSD)</h1>
+            <p class="subtitle">Advanced CT Scan Image Analysis for Early Stroke Detection</p>
+        </header>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <div class="upload-area">
+                    <i class="fa-solid fa-brain upload-icon"></i>
+                    <p class="upload-text">Drag & Drop CT Scan Image</p>
+                    <p class="upload-hint">or click to browse files</p>
+                    <input type="file" id="fileInput" accept="image/*">
+                </div>
+
+                <div class="preview-container">
+                    <img id="imagePreview" src="" alt="CT Scan Preview">
+                </div>
+
+                <button class="analyze-btn">Analyze Scan</button>
+            </div>
+
+            <div class="result-section">
+                <div class="result-placeholder">
+                    Analysis results will appear here
+                </div>
+
+                <div class="loader"></div>
+
+                <div class="result-content">
+                    <h2 class="prediction-label">Normal</h2>
+
+                    <div class="confidence-container">
+                        <div class="confidence-text">Confidence: <span class="confidence-value">0%</span></div>
+                        <div class="confidence-bg">
+                            <div class="confidence-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
